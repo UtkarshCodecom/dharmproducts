@@ -41,6 +41,17 @@ exports.createProduct = catchAsyncErrors(async (req, res, next) => {
   });
 });
 
+//get discounted products
+
+exports.getDiscountedProducts = catchAsyncErrors(async (req, res, next) => {
+  const products = await Product.find({discount: true})
+
+  res.status(200).json({
+    success: true,
+    products,
+  })
+})
+
 //get all products
 
 exports.getAllProducts = catchAsyncErrors(async (req, res, next) => {

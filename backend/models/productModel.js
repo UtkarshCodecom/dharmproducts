@@ -45,6 +45,10 @@ const productSchema = mongoose.Schema({
         type:Number,
         default:0
     },
+    discount:{
+        type: Boolean,
+        default: false
+    },
     reviews:[
         {
             user: {
